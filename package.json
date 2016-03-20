@@ -32,10 +32,26 @@
     "run-commands"
   ],
   "verb": {
+    "run": true,
     "toc": false,
     "layout": "empty",
     "tasks": [
       "readme"
-    ]
+    ],
+    "related": {
+      "list": [
+        "spawn-commands",
+        "cross-spawn",
+        "cross-spawn-async",
+        "async",
+        "capture-spawn",
+        "capture-stream",
+        "parse-arguments",
+        "function-arguments"
+      ]
+    },
+    "lint": {
+      "reflinks": true
+    }
   }
 }
