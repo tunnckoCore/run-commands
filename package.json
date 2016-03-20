@@ -1,6 +1,6 @@
 {
   "name": "run-commands",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Cross-platform running a series of commands or in parallel flow. Run commands in OS X, Linux and even Windows!",
   "repository": "tunnckoCore/run-commands",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
