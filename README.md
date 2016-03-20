@@ -24,7 +24,7 @@ to run them on parallel.
 **Params**
 
 * `cmd` **{String|Array}**    
-* `args` **{Array|Object|Function=}**    
+* `args` **{String|Array|Object|Function=}**    
 * `options` **{Object|Function=}**    
 * `callback` **{Function}**    
 * `returns` **{Stream}**  
@@ -36,22 +36,33 @@ to run them on parallel.
 **Params**
 
 * `cmd` **{String|Array}**    
-* `args` **{Array|Object|Function=}**    
+* `args` **{String|Array|Object|Function=}**    
 * `options` **{Object|Function=}**    
 * `callback` **{Function}**    
 * `returns` **{Stream}**  
 
-### [.parallel](index.js#L62)
+### [.parallel](index.js#L65)
 
 > Run commands in parallel.
 
 **Params**
 
 * `cmd` **{String|Array}**    
-* `args` **{Array|Object|Function=}**    
+* `args` **{String|Array|Object|Function=}**    
 * `options` **{Object|Function=}**    
 * `callback` **{Function}**    
 * `returns` **{Stream}**  
+
+## Signatures
+
+```js
+runCommands(String, String, Object, Function)
+runCommands(String, Array, Object, Function)
+runCommands(String, Object, Function)
+runCommands(String, Function)
+runCommands(Array<String|Object>, Object, Function)
+runCommands(Array<String|Object>, Function)
+```
 
 ## Related
 * [async](https://www.npmjs.com/package/async): Higher-order functions and common patterns for asynchronous code | [homepage](https://github.com/caolan/async)

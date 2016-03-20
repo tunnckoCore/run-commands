@@ -14,7 +14,7 @@ var utils = require('./utils')
  * to run them on parallel.
  *
  * @param  {String|Array} `cmd`
- * @param  {Array|Object|Function=} `args`
+ * @param  {String|Array|Object|Function=} `args`
  * @param  {Object|Function=} `options`
  * @param  {Function} `callback`
  * @return {Stream}
@@ -37,7 +37,7 @@ var runCommands = module.exports = function runCommands (cmd, args, options, cal
  * > Run commands in series. Alias for `runCommands`.
  *
  * @param  {String|Array} `cmd`
- * @param  {Array|Object|Function=} `args`
+ * @param  {String|Array|Object|Function=} `args`
  * @param  {Object|Function=} `options`
  * @param  {Function} `callback`
  * @return {Stream}
@@ -55,7 +55,7 @@ runCommands.series = function series () {
  * > Run commands in parallel.
  *
  * @param  {String|Array} `cmd`
- * @param  {Array|Object|Function=} `args`
+ * @param  {String|Array|Object|Function=} `args`
  * @param  {Object|Function=} `options`
  * @param  {Function} `callback`
  * @return {Stream}

@@ -20,10 +20,3 @@ test('foo', function (done) {
     {cmd: 'echo www'}
   ], done)
 })
-
-// Signatures:
-// runCommands(String, Array, Object, Function)
-// runCommands(String, Object, Function)
-// runCommands(String, Function)
-// runCommands(Array<String|Object>, Object, Function)
-// runCommands(Array<String|Object>, Function)
