@@ -1,16 +1,29 @@
-/**
+/*!
  * run-commands <https://github.com/tunnckoCore/run-commands>
  *
- * Copyright (c) 2015 Charlike Mike Reagent, contributors.
+ * Copyright (c) 2016 Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)
  * Released under the MIT license.
  */
 
-'use strict';
+/* jshint asi:true */
 
-var test = require('testit');
-var assert = require('assert');
-var runCommands = require('./index');
+'use strict'
 
-test('run-commands:', function() {
-  // body
-});
+var test = require('assertit')
+var runCommands = require('./index')
+
+test('foo', function (done) {
+  runCommands([
+    'echo foo',
+    {cmd: 'echo', args: ['bar', 'qux']},
+    'echo zzz',
+    {cmd: 'echo www'}
+  ], done)
+})
+
+// Signatures:
+// runCommands(String, Array, Object, Function)
+// runCommands(String, Object, Function)
+// runCommands(String, Function)
+// runCommands(Array<String|Object>, Object, Function)
+// runCommands(Array<String|Object>, Function)
