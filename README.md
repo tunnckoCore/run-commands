@@ -16,6 +16,43 @@ npm i run-commands --save
 const runCommands = require('run-commands')
 ```
 
+### [runCommands](index.js#L24)
+
+> Run commands in series by default, pass `options.parallel: true`
+to run them on parallel.
+
+**Params**
+
+* `cmd` **{String|Array}**    
+* `args` **{Array|Object|Function=}**    
+* `options` **{Object|Function=}**    
+* `callback` **{Function}**    
+* `returns` **{Stream}**  
+
+### [.series](index.js#L47)
+
+> Run commands in series. Alias for `runCommands`.
+
+**Params**
+
+* `cmd` **{String|Array}**    
+* `args` **{Array|Object|Function=}**    
+* `options` **{Object|Function=}**    
+* `callback` **{Function}**    
+* `returns` **{Stream}**  
+
+### [.parallel](index.js#L62)
+
+> Run commands in parallel.
+
+**Params**
+
+* `cmd` **{String|Array}**    
+* `args` **{Array|Object|Function=}**    
+* `options` **{Object|Function=}**    
+* `callback` **{Function}**    
+* `returns` **{Stream}**  
+
 ## Related
 * [async](https://www.npmjs.com/package/async): Higher-order functions and common patterns for asynchronous code | [homepage](https://github.com/caolan/async)
 * [capture-spawn](https://www.npmjs.com/package/capture-spawn): Asynchronously capturing spawn output. | [homepage](https://github.com/tunnckocore/capture-spawn)

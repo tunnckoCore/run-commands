@@ -9,10 +9,22 @@
 
 var utils = require('./utils')
 
-var runner = module.exports = function runner (cmd, args, options, callback) {
+/**
+ * > Run commands in series by default, pass `options.parallel: true`
+ * to run them on parallel.
+ *
+ * @param  {String|Array} `cmd`
+ * @param  {Array|Object|Function=} `args`
+ * @param  {Object|Function=} `options`
+ * @param  {Function} `callback`
+ * @return {Stream}
+ * @api public
+ */
+
+var runCommands = module.exports = function runCommands (cmd, args, options, callback) {
   var app = utils.normalizeArgs(cmd, args, options, callback)
   if (utils.isArray(app.cmd)) {
-    utils.factory(app, runner)
+    utils.factory(app, runCommands)
     return
   }
   if (typeof app.cmd !== 'string') {
@@ -21,10 +33,32 @@ var runner = module.exports = function runner (cmd, args, options, callback) {
   return utils.spawn(app, this || {})
 }
 
-runner.series = function series () {
-  return runner.apply({options: {parallel: false}}, arguments)
+/**
+ * > Run commands in series. Alias for `runCommands`.
+ *
+ * @param  {String|Array} `cmd`
+ * @param  {Array|Object|Function=} `args`
+ * @param  {Object|Function=} `options`
+ * @param  {Function} `callback`
+ * @return {Stream}
+ * @api public
+ */
+
+runCommands.series = function series () {
+  return runCommands.apply({options: {parallel: false}}, arguments)
 }
 
-runner.parallel = function parallel () {
-  return runner.apply({options: {parallel: true}}, arguments)
+/**
+ * > Run commands in parallel.
+ *
+ * @param  {String|Array} `cmd`
+ * @param  {Array|Object|Function=} `args`
+ * @param  {Object|Function=} `options`
+ * @param  {Function} `callback`
+ * @return {Stream}
+ * @api public
+ */
+
+runCommands.parallel = function parallel () {
+  return runCommands.apply({options: {parallel: true}}, arguments)
 }
