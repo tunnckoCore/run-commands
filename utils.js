@@ -38,6 +38,7 @@ require('parse-arguments', 'parseArgs')
 
 require = fn // eslint-disable-line no-undef, no-native-reassign
 
+/* eslint complexity: [2, 15] */
 utils.normalizeArgs = function normalizeArgs (cmd, args, options, callback) {
   var argz = utils.parseArgs(arguments, normalizeArgs)
   if (typeof argz.args === 'function') {

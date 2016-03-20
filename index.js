@@ -45,7 +45,10 @@ var runCommands = module.exports = function runCommands (cmd, args, options, cal
  */
 
 runCommands.series = function series () {
-  return runCommands.apply({options: {parallel: false}}, arguments)
+  var ctx = {options: {
+    parallel: false
+  }}
+  return runCommands.apply(ctx, arguments)
 }
 
 /**
